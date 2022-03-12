@@ -23,12 +23,6 @@ Make sure your DB is up and running.
 - `routes/` - This folder contains the route definitions for our API.
 - `models/` - This folder contains the schema definitions for our Mongoose models.
 
-## Connect to DB
-
-1. Create a new DB in mongodb atlas
-1. Add an env variable called `MONGODB_URI` with the value of the connection URI you can find on the site,
-   which you can find when clicking on the `connect` button on the site.
-
 ## Error Handling
 
 In `routes/api/index.js`, we define a error-handling middleware for handling Mongoose's `ValidationError`. This middleware will respond with a 422 status code and format the response to have [error messages the clients can understand](https://github.com/gothinkster/realworld/blob/master/API.md#errors-and-status-codes)
