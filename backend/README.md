@@ -26,7 +26,8 @@ Make sure your DB is up and running.
 ## Connect to DB
 
 1. Create a new DB in mongodb atlas
-1. Add an env variable called `MONGODB_URI` with the value of the connection URI you can find on the site.
+1. Add an env variable called `MONGODB_URI` with the value of the connection URI you can find on the site,
+   which you can find when clicking on the `connect` button on the site.
 
 ## Error Handling
 
