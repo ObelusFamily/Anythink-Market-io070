@@ -24,5 +24,4 @@ const seed = async () => {
 
 seed();
 
-console.log("here", err);
 console.log("env", process.env);
