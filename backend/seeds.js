@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 require("./models/User");
 require("./models/Item");
+require("./models/Comment");
 var Item = mongoose.model("Item");
 var User = mongoose.model("User");
 var Comment = mongoose.model("Comment");
