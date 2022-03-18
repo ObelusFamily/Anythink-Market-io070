@@ -1,25 +1,26 @@
-const fetch = require("node-fetch");
+var mongoose = require("mongoose");
+require("./models/User");
+require("./models/Item");
+var Item = mongoose.model("Item");
 
 // seed database
 const seed = async () => {
-  for (let index = 0; index < 110; index++) {
-    await fetch("https://api.anythink.market/api/items", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        authorization:
-          "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzQ3NmVlMTI0YWRlM2NkODI3NDYzNSIsInVzZXJuYW1lIjoiZGFuaWVsIiwiZXhwIjoxNjUyNzg1ODg2LCJpYXQiOjE2NDc2MDU0ODZ9.piBBE3GXONWFP6sk9-sPHUyXTOhneRDQgjvhfoBCp0k",
+  for (let index = 0; index < 10 /* 110 */; index++) {
+    const item = new Item({
+      title: `Item ${index}`,
+      description: `Item ${index} description`,
+    });
+    await item.save().then(
+      (result) => {
+        console.log(result);
+        console.log(`Item ${index} saved`);
       },
-      body: JSON.stringify({
-        item: {
-          title: `seed-${index}`,
-          description: "description description description",
-        },
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+      () => {
+        console.log(`Item ${index} not saved`);
+      }
+    );
   }
   console.log("seed done");
 };
+
+seed();
