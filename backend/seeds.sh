@@ -1,3 +1,5 @@
 #!/bin/sh
 
-yarn seeds
+
+
+yarn start && yarn seeds
