@@ -42,8 +42,8 @@ const seedItems = async () => {
 };
 
 (async () => {
-  seedUsers();
-  seedItems();
+  await seedUsers();
+  await seedItems();
 
   process.exit();
 })();
