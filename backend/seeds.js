@@ -4,7 +4,7 @@ require("./models/Item");
 var Item = mongoose.model("Item");
 var User = mongoose.model("User");
 
-mongoose.connect("mongodb://127.0.0.1:27017");
+mongoose.connect(process.env.MONGODB_URI);
 
 // seed database with users
 const seedUsers = async () => {
@@ -19,7 +19,6 @@ const seedUsers = async () => {
     });
   }
   console.log("Users seeding done");
-  process.exit();
 };
 seedUsers();
 
