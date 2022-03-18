@@ -137,7 +137,7 @@ router.get("/feed", auth.required, function(req, res, next) {
   });
 });
 
-router.post("/", auth.required, function(req, res, next) {
+// Create a new item
   User.findById(req.payload.id)
     .then(function(user) {
       if (!user) {
