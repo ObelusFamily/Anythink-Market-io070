@@ -2,4 +2,4 @@
 
 
 
-yarn start && yarn seeds
+yarn seeds
