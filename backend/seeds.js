@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 // seed database
 const seed = async () => {
   for (let index = 0; index < 110; index++) {
-    await fetch("https://api.anythink.market/api", {
+    await fetch("https://api.anythink.market/api/items", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
