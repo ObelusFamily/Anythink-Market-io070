@@ -7,7 +7,7 @@ mongoose.connect("mongodb://127.0.0.1:27017");
 
 // seed database
 const seed = async () => {
-  for (let index = 0; index < 10 /* 110 */; index++) {
+  for (let index = 0; index < 110; index++) {
     const item = new Item({
       title: `Item ${index}`,
       description: `Item ${index} description`,
@@ -26,3 +26,4 @@ const seed = async () => {
 };
 
 seed();
+process.exit();
