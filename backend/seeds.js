@@ -3,6 +3,8 @@ require("./models/User");
 require("./models/Item");
 var Item = mongoose.model("Item");
 
+mongoose.connect("mongodb://127.0.0.1:27017");
+
 // seed database
 const seed = async () => {
   for (let index = 0; index < 10 /* 110 */; index++) {
