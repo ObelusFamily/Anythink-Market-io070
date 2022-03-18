@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 // seed database
 const seed = async () => {
-  for (let index = 0; index < 100; index++) {
+  for (let index = 0; index < 110; index++) {
     await fetch("https://api.anythink.market/api", {
       method: "POST",
       headers: {
@@ -21,4 +21,5 @@ const seed = async () => {
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
   }
+  console.log("seed done");
 };
