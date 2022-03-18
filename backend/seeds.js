@@ -26,5 +26,3 @@ const seed = async () => {
 };
 
 seed();
-
-console.log("env", process.env);
