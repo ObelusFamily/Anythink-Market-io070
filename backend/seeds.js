@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
 
 const conSuccess = mongoose.connection;
-conSuccess.once("open", (_) => {
-  console.log("Database connected:");
+conSuccess.once("open", (...args) => {
+  console.log("Database connected:", args);
 });
 
 // // seed database
