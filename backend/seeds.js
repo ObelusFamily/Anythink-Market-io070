@@ -18,30 +18,32 @@ const seedUsers = async () => {
       console.log(`User ${user.username} created`);
     });
   }
-  console.log("Users seeding done");
-  process.exit();
+  console.log("!!!!!!!! Users seeding done");
 };
-seedUsers();
 
-// // seed database with items
-// const seedItems = async () => {
-//   for (let index = 0; index < 100; index++) {
-//     const item = new Item({
-//       title: `Item ${index}`,
-//       description: `Item ${index} description`,
-//     });
-//     await item.save().then(
-//       (result) => {
-//         console.log(result);
-//         console.log(`Item ${index} saved`);
-//       },
-//       () => {
-//         console.log(`Item ${index} not saved`);
-//       }
-//     );
-//   }
-//   console.log("seed done");
-//   process.exit();
-// };
+// seed database with items
+const seedItems = async () => {
+  for (let index = 0; index < 100; index++) {
+    const item = new Item({
+      title: `Item ${index}`,
+      description: `Item ${index} description`,
+    });
+    await item.save().then(
+      (result) => {
+        console.log(result);
+        console.log(`Item ${index} saved`);
+      },
+      () => {
+        console.log(`Item ${index} not saved`);
+      }
+    );
+  }
+  console.log("!!!!!!!! Items seeding done");
+};
 
-// seedItems();
+(async () => {
+  seedUsers();
+  seedItems();
+
+  process.exit();
+})();
