@@ -3,6 +3,7 @@ require("./models/User");
 require("./models/Item");
 var Item = mongoose.model("Item");
 var User = mongoose.model("User");
+var Comment = mongoose.model("Comment");
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -30,7 +31,6 @@ const seedItems = async () => {
     });
     await item.save().then(
       (result) => {
-        console.log(result);
         console.log(`Item ${index} saved`);
       },
       () => {
@@ -41,9 +41,23 @@ const seedItems = async () => {
   console.log("!!!!!!!! Items seeding done");
 };
 
+const seedComments = async () => {
+  for (let index = 0; index < 100; index++) {
+    const comment = new Comment({
+      body: `Comment ${index}`,
+    });
+
+    await comment.save().then((comment) => {
+      console.log(`Comment ${index} saved`);
+    });
+  }
+  console.log("!!!!!!!! Comments seeding done");
+};
+
 (async () => {
   await seedUsers();
   await seedItems();
+  await seedComments();
 
   process.exit();
 })();
