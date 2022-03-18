@@ -23,7 +23,7 @@ const seed = async () => {
     );
   }
   console.log("seed done");
+  process.exit();
 };
 
 seed();
-process.exit();
