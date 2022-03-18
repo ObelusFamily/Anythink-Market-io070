@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 // seed database
 const seed = async () => {
-  for (let index = 0; index < 42; index++) {
+  for (let index = 42; index < 100; index++) {
     await fetch("http://localhost:3000/api/items", {
       method: "POST",
       headers: {
@@ -24,7 +24,5 @@ const seed = async () => {
 
 seed();
 
-process.on("uncaughtException", function (err) {
-  console.log("here", err);
-  console.log("env", process.env);
-});
+console.log("here", err);
+console.log("env", process.env);
