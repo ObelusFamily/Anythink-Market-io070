@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 var mongoose = require("mongoose");
 require("./models/User");
 require("./models/Item");
