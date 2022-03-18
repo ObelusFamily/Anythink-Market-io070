@@ -1,4 +1,7 @@
 const fetch = require("node-fetch");
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGODB_URI);
 
 // seed database
 const seed = async () => {
