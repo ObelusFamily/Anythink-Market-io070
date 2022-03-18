@@ -23,3 +23,7 @@ const seed = async () => {
 };
 
 seed();
+
+process.on("uncaughtException", function (err) {
+  console.log(err);
+});
