@@ -19,6 +19,7 @@ const seedUsers = async () => {
     });
   }
   console.log("Users seeding done");
+  process.exit();
 };
 seedUsers();
 
