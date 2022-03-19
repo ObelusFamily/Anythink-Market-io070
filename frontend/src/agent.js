@@ -3,7 +3,6 @@ import _superagent from "superagent";
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-console.log(process.env.REACT_APP_API_URL);
 const API_ROOT =
   process.env.REACT_APP_API_URL || "https://api.anythink.market/api";
 
